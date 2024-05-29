@@ -2,7 +2,7 @@ const Footer = () => {
     return(
 
     <header id= "main-footer">
-        <h1>My Footer</h1>
+        <h1>&copy; Alex Amico</h1>
     </header>
     );
 };
