@@ -13,7 +13,7 @@ root.render(
 
 
     
-      <BrowserRouter>
+      <BrowserRouter basename={Process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
