@@ -1,8 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
+import Porzingis from "../images/kristaps_porzingis.jpg";
+import Allen from "../images/jarrett_allen.jpg";
+
+
 
 const NextGame = () => {
   const celticsInjuries = [
     {
+      <img src={Porzingis} id="Porzingis" alt= "Krixtaps Porzingis" />
       name: 'Kristaps Porzingis',
       injury: 'Has been ruled out (Right soleus strain (calf))',
     },
@@ -10,6 +15,7 @@ const NextGame = () => {
 
   const cavaliersInjuries = [
     {
+      <img src={Allen} id="Allen" alt= "Jarrett Allen" />
       name: 'Jarrett Allen',
       injury: 'Minutes Restriction (Soreness of the ribs)',
     },
@@ -28,9 +34,9 @@ const NextGame = () => {
       {/* Left Navigation Section */}
       <nav className="left-nav">
         <ul>
-          <li><a href="#" className="active">Next Game 1</a></li>
+          <li><Link to="/nextgame">Next Game</Link></li>
           <li><Link to="/nextgame2">Next Game 2</Link></li>
-          <li><Link to="/23-24_record">23-24 Record</Link></li>
+          <li><Link to="/record">Record</Link></li>
         </ul>
       </nav>
 

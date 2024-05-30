@@ -1,3 +1,6 @@
+import { Outlet, Link } from "react-router-dom";
+
+
 const NextGame2 = () => {
   const celticsInjuries = [
     {
@@ -18,13 +21,13 @@ const NextGame2 = () => {
   ];
 
   return (
-    <div className="nextgame2-page">
+    <div className="nextgame-page">
       {/* Left Navigation Section */}
       <nav className="left-nav">
         <ul>
-          <li><a href="nextgame.js">Next Game 1</a></li>
-          <li><a href="#" className="active">Next Game 2</a></li>
-          <li><a href="23-24_record.js">23-24 Record</a></li>
+          <li><Link to="/nextgame">Next Game</Link></li>
+          <li><Link to="/nextgame2">Next Game 2</Link></li>
+          <li><Link to="/record">Record</Link></li>
         </ul>
       </nav>
 
