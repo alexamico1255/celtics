@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/celtics/static/css/main.1e134e00.css",
-    "main.js": "/celtics/static/js/main.20cfa22e.js",
+    "main.js": "/celtics/static/js/main.274780b4.js",
     "static/media/logo.png": "/celtics/static/media/logo.e227d56f691c6cece72a.png",
     "index.html": "/celtics/index.html",
     "main.1e134e00.css.map": "/celtics/static/css/main.1e134e00.css.map",
-    "main.20cfa22e.js.map": "/celtics/static/js/main.20cfa22e.js.map"
+    "main.274780b4.js.map": "/celtics/static/js/main.274780b4.js.map"
   },
   "entrypoints": [
     "static/css/main.1e134e00.css",
-    "static/js/main.20cfa22e.js"
+    "static/js/main.274780b4.js"
   ]
 }
