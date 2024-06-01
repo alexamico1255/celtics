@@ -1,13 +1,16 @@
-import { Outlet, Link } from "react-router-dom";
-import Porzingis from "../images/kristaps_porzingis.jpg";
-import Allen from "../images/jarrett_allen.jpg";
-
-
+import React from 'react';
+import { Outlet, NavLink } from 'react-router-dom';
+import Porzingis from '../images/kristaps_porzingis.jpg';
+import Allen from '../images/jarrett_allen.jpg';
+import Mitchell from '../images/donovan_mitchell.jpg';
+import LeVert from '../images/caris_levert.jpg';
+import CavsLogo from '../images/team_logo/cavs.jpg';
+import '../styles/nextgame.css';
 
 const NextGame = () => {
   const celticsInjuries = [
     {
-      <img src={Porzingis} id="Porzingis" alt= "Krixtaps Porzingis" />
+      image: <img src={Porzingis} className="player-image" alt="Kristaps Porzingis" />,
       name: 'Kristaps Porzingis',
       injury: 'Has been ruled out (Right soleus strain (calf))',
     },
@@ -15,15 +18,17 @@ const NextGame = () => {
 
   const cavaliersInjuries = [
     {
-      <img src={Allen} id="Allen" alt= "Jarrett Allen" />
+      image: <img src={Allen} className="player-image" alt="Jarrett Allen" />,
       name: 'Jarrett Allen',
       injury: 'Minutes Restriction (Soreness of the ribs)',
     },
     {
+      image: <img src={Mitchell} className="player-image" alt="Donovan Mitchell" />,
       name: 'Donovan Mitchell',
       injury: 'Minutes Restriction (Calf tightness)',
     },
     {
+      image: <img src={LeVert} className="player-image" alt="Caris LeVert" />,
       name: 'Caris LeVert',
       injury: 'Has been ruled out (knee)',
     },
@@ -34,9 +39,9 @@ const NextGame = () => {
       {/* Left Navigation Section */}
       <nav className="left-nav">
         <ul>
-          <li><Link to="/nextgame">Next Game</Link></li>
-          <li><Link to="/nextgame2">Next Game 2</Link></li>
-          <li><Link to="/record">Record</Link></li>
+          <li><NavLink to="/nextgame" activeClassName="active">Next Game</NavLink></li>
+          <li><NavLink to="/nextgame2" activeClassName="active">Next Game 2</NavLink></li>
+          <li><NavLink to="/record" activeClassName="active">Record</NavLink></li>
         </ul>
       </nav>
 
@@ -46,6 +51,9 @@ const NextGame = () => {
           <div className="games-text-section">
             <h2>Here is a breakdown of our next game</h2>
             <h3>Cleveland Cavaliers</h3>
+            <div className="team-logo">
+              <img src={CavsLogo} alt="Cleveland Cavaliers Logo" />
+            </div>
             <p>
               The upcoming game between the Boston Celtics and the Cleveland Cavaliers promises to be intriguing, though both teams are contending with significant injuries and restrictions affecting key players. The Celtics will be missing Kristaps Porzingis, who has been ruled out due to a right soleus strain in his calf. For the Cavaliers, Jarrett Allen and Donovan Mitchell will both be on minutes restrictions, with Allen dealing with rib soreness and Mitchell experiencing calf tightness. Additionally, Caris LeVert has been ruled out with a knee injury.
               <br /><br />
@@ -64,6 +72,7 @@ const NextGame = () => {
           <ul>
             {celticsInjuries.map((player, index) => (
               <li key={index}>
+                {player.image}
                 {player.name} - {player.injury}
               </li>
             ))}
@@ -74,6 +83,7 @@ const NextGame = () => {
           <ul>
             {cavaliersInjuries.map((player, index) => (
               <li key={index}>
+                {player.image}
                 {player.name} - {player.injury}
               </li>
             ))}
