@@ -1,0 +1,37 @@
+/* Table on Players page */
+th,
+td {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Table on Players page */
+.players-page th {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Table data on Players page */
+.players-page td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--tertiary-color);
+}
+
+/* Player Bio Page Specific Styles */
+.player-bio {
+    text-align: center;
+    padding: 20px;
+}
+
+.player-bio h2 {
+    margin-bottom: 10px;
+}
+
+.player-bio iframe {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 5px;
+}

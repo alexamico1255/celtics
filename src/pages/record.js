@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios'; // Import axios
 import '../styles/nextgame.css';
 
 const Record = () => {
   const [teams, setTeams] = useState({ easternTeams: [], westernTeams: [] });
 
   useEffect(() => {
-    fetch('teams.json')
-      .then(response => response.json())
-      .then(data => setTeams(data))
-      .catch(error => console.error('Error fetching team data:', error));
+    // Use axios to fetch data
+    axios.get('teams.json')
+      .then(response => {
+        setTeams(response.data); // Use response.data to get the data
+      })
+      .catch(error => {
+        console.error('Error fetching team data:', error);
+      });
   }, []);
 
   const getImageSrc = (teamName) => {
@@ -17,6 +22,7 @@ const Record = () => {
   };
 
   return (
+
     <div className="record-page">
       {/* Main Content Section */}
       <div className="main-content">

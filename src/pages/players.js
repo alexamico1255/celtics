@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../styles/nextgame.css';
+import '../styles/players.css';
 
 const Players = () => {
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('players.json')
+    axios.get('https://alexamico1255.github.io/csce242/projects/part6/players.json')
       .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
+        setPlayers(response.data);
       })
-      .then(data => setPlayers(data))
       .catch(error => {
         console.error('Error fetching player data:', error);
         setError(error);
