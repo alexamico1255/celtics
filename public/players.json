@@ -1,7 +1,7 @@
 [
     {
         "_id": 1,
-        "img_name": "images/jrue_holiday.jpg",
+        "img_name": "src/images/jrue_holiday.jpg",
         "name": "Jrue Holiday",
         "ppg": 12.5,
         "rebounds": 5.4,
@@ -91,7 +91,7 @@
     },
     {
         "_id": 7,
-        "img_name": "images/peyton_pritchard.jpg",
+        "img_name": "/src/images/derrick_white.jpg",
         "name": "Peyton Pritchard",
         "ppg": 9.6,
         "rebounds": 3.2,

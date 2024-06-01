@@ -5,7 +5,7 @@ const Record = () => {
   const [teams, setTeams] = useState({ easternTeams: [], westernTeams: [] });
 
   useEffect(() => {
-    fetch('/teams.json')
+    fetch('teams.json')
       .then(response => response.json())
       .then(data => setTeams(data))
       .catch(error => console.error('Error fetching team data:', error));
@@ -25,8 +25,8 @@ const Record = () => {
         <div className="teams-grid">
           {teams.easternTeams.map((team, index) => (
             <div className="team" key={index}>
-              <img src={getImageSrc(team.name)} alt={team.name} className="team-logo" />
               <h3>{team.name}</h3>
+              <img src={getImageSrc(team.name)} alt={team.name} className="team-logo" />
               <p>{team.record}</p>
             </div>
           ))}
@@ -36,8 +36,8 @@ const Record = () => {
         <div className="teams-grid">
           {teams.westernTeams.map((team, index) => (
             <div className="team" key={index}>
-              <img src={getImageSrc(team.name)} alt={team.name} className="team-logo" />
               <h3>{team.name}</h3>
+              <img src={getImageSrc(team.name)} alt={team.name} className="team-logo" />
               <p>{team.record}</p>
             </div>
           ))}
