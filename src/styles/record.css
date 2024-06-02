@@ -1,0 +1,52 @@
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Team Box */
+.team {
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.team img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.team h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.team p {
+    margin: 0;
+}
+
+
+/* Eastern Conference Teams */
+.eastern-conference {
+    text-align: center;
+    color: var(--eastern-color);
+    margin: 20px 0;
+}
+
+.eastern-conference + .teams-grid .team {
+    border: 1px solid var(--eastern-color);
+}
+
+/* Western Conference Teams */
+.western-conference {
+    text-align: center;
+    color: var(--western-color);
+    margin: 20px 0;
+}
+
+.western-conference + .teams-grid .team {
+    border: 1px solid var(--western-color);
+}

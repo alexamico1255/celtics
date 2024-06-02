@@ -32,44 +32,6 @@
     display: flex;
 }
 
-/* Left Navigation Section */
-.left-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: var(--primary-color);
-    overflow-y: auto;
-}
-
-.left-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.left-nav li {
-    padding: 10px;
-}
-
-.left-nav a {
-    display: block;
-    color: var(--tertiary-color);
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.left-nav a:hover {
-    background-color: #ddd;
-    color: var(--tertiary-color);
-}
-
-.left-nav a.active {
-    font-weight: bold;
-}
-
 .main-content {
     margin-left: 200px;
     width: calc(100% - 200px);

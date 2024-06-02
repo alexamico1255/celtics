@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/nextgame.css';
+import '../styles/record.css';
 
 const Record = () => {
   const [teams, setTeams] = useState({ easternTeams: [], westernTeams: [] });

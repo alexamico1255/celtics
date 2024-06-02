@@ -6,6 +6,8 @@ import Mitchell from '../images/donovan_mitchell.jpg';
 import LeVert from '../images/caris_levert.jpg';
 import CavsLogo from '../images/team_logo/cavs.jpg';
 import '../styles/nextgame.css';
+import '../styles/nav.css';
+
 
 const NextGame = () => {
   const celticsInjuries = [

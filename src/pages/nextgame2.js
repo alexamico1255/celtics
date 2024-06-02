@@ -5,6 +5,7 @@ import Brunson from '../images/jaylen_brunson.jpg';
 import Robinson from '../images/mitchell_robinson.jpg';
 import KnicksLogo from '../images/team_logo/knicks.jpg';
 import '../styles/nextgame.css';
+import '../styles/nav.css';
 
 const NextGame2 = () => {
   const celticsInjuries = [

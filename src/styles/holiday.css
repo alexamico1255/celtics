@@ -1,0 +1,40 @@
+:root {
+    --primary-color: green;
+    --secondary-color: white;
+    --tertiary-color: black;
+    --eastern-color: blue;
+    --western-color: red;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  .holiday-bio {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+  }
+  
+  .holiday-bio h2 {
+    color: var(--tertiary-color);
+  }
+  
+  .holiday-bio iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .holiday-bio p {
+    margin-top: 20px;
+
+  }
+  

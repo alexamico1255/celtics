@@ -67,7 +67,7 @@ const Players = () => {
               <tr key={player._id}>
                 <td>
                   {player.name === 'Jrue Holiday' ? (
-                    <Link to="/jrue_holiday">
+                    <Link to="/holiday">
                       <img src={playerImages[player.name]} alt={player.name} />
                     </Link>
                   ) : (

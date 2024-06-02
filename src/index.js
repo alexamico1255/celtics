@@ -8,6 +8,8 @@ import Players from "./pages/players";
 import Nextgame from "./pages/nextgame";
 import Nextgame2 from "./pages/nextgame2";
 import Record from "./pages/record";
+import Holiday from "./pages/holiday";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,7 +25,7 @@ root.render(
             <Route path="nextgame" element={<Nextgame />} />
             <Route path="nextgame2" element={<Nextgame2 />} />
             <Route path="record" element={<Record />} />         
-            <Route path="jrue_holiday" element={<Record />} />
+            <Route path="holiday" element={<Holiday />} />
             
             </Route>
         </Routes>
