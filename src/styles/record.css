@@ -28,7 +28,6 @@
     margin: 0;
 }
 
-
 /* Eastern Conference Teams */
 .eastern-conference {
     text-align: center;
@@ -49,4 +48,22 @@
 
 .western-conference + .teams-grid .team {
     border: 1px solid var(--western-color);
+}
+
+/* Media query for screens 600px or less */
+@media (max-width: 600px) {
+    .teams-grid {
+        grid-template-columns: 1fr; /* Adjust to 1 column for smaller screens */
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+    .team img {
+        width: 50px; /* Adjust image size for smaller screens */
+        height: 50px;
+    }
+    .team h3 {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+    .team {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
 }

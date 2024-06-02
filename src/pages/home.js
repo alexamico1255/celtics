@@ -1,28 +1,35 @@
+import React from 'react';
 import '../styles/home.css';
+import championship from '../images/08_championship.jpg';
+import Russell from '../images/bill_russell.jpg';
 
 const Home = () => {
   return (
     <div className="home-page">
       {/* Main Content Section */}
       <div className="main-wrapper">
-        <div className="home-container">
-          <h2>Welcome to Celtics Central</h2>
-          <h4>Your hub for all things related to the Celtics. Stay updated with the latest news, player information, and upcoming events.</h4>
-          <br />
-          <p>
-            Welcome to Celtics Central, your premier hub for all things related to the Boston Celtics! Here, you’ll find the latest news, player information, and details on upcoming events, all dedicated to keeping you informed and engaged with your favorite team.
-            <br /><br />
-            At Celtics Central, we are passionate about the rich history and exciting future of the Celtics. From game previews and post-game analyses to in-depth player bios and injury reports, we cover every aspect of the team. Our goal is to provide fans with a comprehensive source of information, ensuring you never miss a moment of the action.
-            <br /><br />
-            Our community is built for the most dedicated Celtics fans. Engage with fellow supporters through our forums, participate in discussions about team strategies, and share your thoughts on recent games. We also feature exclusive interviews with players and coaches, behind-the-scenes looks at practices, and special content that you won’t find anywhere else. Celtics Central is more than just a news site; it’s a place to celebrate the Celtics' legacy and connect with other fans who share your passion.
-            <br /><br />
-            Whether you’re a lifelong fan or new to the Celtics community, Celtics Central is your go-to destination for all the latest updates. Join us as we follow the journey of the Boston Celtics, celebrating every victory and navigating every challenge together. Stay tuned and stay connected with Celtics Central – your ultimate Celtics fan experience!
-          </p>
-        </div>
+      <div className="home-container">
+  <div>
+    <h2>Welcome to Celtics Central</h2>
+    <h4>Your hub for all things related to the Celtics. Stay updated with the latest news, player information, and upcoming events.</h4>
+    <br />
+    <p>
+      Welcome to Celtics Central, your premier hub for all things related to the Boston Celtics! Here, you’ll find the latest news, player information, and details on upcoming events, all dedicated to keeping you informed and engaged with your favorite team.
+      <br /><br />
+      At Celtics Central, we are passionate about the rich history and exciting future of the Celtics. From game previews and post-game analyses to in-depth player bios and injury reports, we cover every aspect of the team. Our goal is to provide fans with a comprehensive source of information, ensuring you never miss a moment of the action.
+      <br /><br />
+      Our community is built for the most dedicated Celtics fans. Engage with fellow supporters through our forums, participate in discussions about team strategies, and share your thoughts on recent games. We also feature exclusive interviews with players and coaches, behind-the-scenes looks at practices, and special content that you won’t find anywhere else. Celtics Central is more than just a news site; it’s a place to celebrate the Celtics' legacy and connect with other fans who share your passion.
+      <br /><br />
+      Whether you’re a lifelong fan or new to the Celtics community, Celtics Central is your go-to destination for all the latest updates. Join us as we follow the journey of the Boston Celtics, celebrating every victory and navigating every challenge together. Stay tuned and stay connected with Celtics Central – your ultimate Celtics fan experience!
+    </p>
+  </div>
+  <img src={championship} alt="2008 Championship" className="home-image-right" />
+</div>
       </div>
 
       {/* Celtics History Section */}
       <div className="celtics-history">
+        <img src={Russell} alt="Bill Russell" className="history-image" />
         <div className="history-text">
           <h2>Celtics History</h2>
           <p>
