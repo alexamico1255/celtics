@@ -1,7 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../styles/nextgame.css';
+import { Link } from 'react-router-dom';
 import '../styles/players.css';
+import Holiday from '../images/jrue_holiday.jpg';
+import White from '../images/derrick_white.jpg';
+import Brown from '../images/jaylen_brown.jpg';
+import Tatum from '../images/jayson_tatum.jpg';
+import Porzingis from '../images/kristaps_porzingis.jpg';
+import Horford from '../images/al_horford.jpg';
+import Pritchard from '../images/peyton_pritchard.jpg';
+import Hauser from '../images/sam_hauser.jpg';
+
+// Map player names to images
+const playerImages = {
+  'Jrue Holiday': Holiday,
+  'Derrick White': White,
+  'Jaylen Brown': Brown,
+  'Jayson Tatum': Tatum,
+  'Kristaps Porzingis': Porzingis,
+  'Al Horford': Horford,
+  'Peyton Pritchard': Pritchard,
+  'Sam Hauser': Hauser,
+};
 
 const Players = () => {
   const [players, setPlayers] = useState([]);
@@ -24,7 +44,6 @@ const Players = () => {
 
   return (
     <div className="players-page">
-      {/* Main Content Section */}
       <div className="players-container">
         <h2>2023-2024 Roster:</h2>
         <table>
@@ -46,7 +65,15 @@ const Players = () => {
           <tbody id="players-list">
             {players.map(player => (
               <tr key={player._id}>
-                <td><img src={player.img_name} alt={player.name} /></td>
+                <td>
+                  {player.name === 'Jrue Holiday' ? (
+                    <Link to="/jrue_holiday">
+                      <img src={playerImages[player.name]} alt={player.name} />
+                    </Link>
+                  ) : (
+                    <img src={playerImages[player.name]} alt={player.name} />
+                  )}
+                </td>
                 <td>{player.name}</td>
                 <td>{player.ppg}</td>
                 <td>{player.rebounds}</td>

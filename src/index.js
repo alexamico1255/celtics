@@ -22,7 +22,8 @@ root.render(
             <Route path="players" element={<Players />} />
             <Route path="nextgame" element={<Nextgame />} />
             <Route path="nextgame2" element={<Nextgame2 />} />
-            <Route path="record" element={<Record />} />          
+            <Route path="record" element={<Record />} />         
+            <Route path="jrue_holiday" element={<Record />} />
             
             </Route>
         </Routes>

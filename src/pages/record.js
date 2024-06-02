@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Import axios
+import { Outlet, NavLink } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/nextgame.css';
 
 const Record = () => {
@@ -24,6 +25,14 @@ const Record = () => {
   return (
 
     <div className="record-page">
+            {/* Left Navigation Section */}
+            <nav className="left-nav">
+        <ul>
+          <li><NavLink to="/nextgame" activeClassName="active">Next Game</NavLink></li>
+          <li><NavLink to="/nextgame2" activeClassName="active">Next Game 2</NavLink></li>
+          <li><NavLink to="/record" activeClassName="active">Record</NavLink></li>
+        </ul>
+      </nav>
       {/* Main Content Section */}
       <div className="main-content">
         <h1 style={{ textAlign: 'center' }}>2023-2024 Regular Season Record<br />64-18</h1>

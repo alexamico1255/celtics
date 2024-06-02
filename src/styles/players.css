@@ -19,19 +19,3 @@ td {
     text-align: center;
     border: 1px solid var(--tertiary-color);
 }
-
-/* Player Bio Page Specific Styles */
-.player-bio {
-    text-align: center;
-    padding: 20px;
-}
-
-.player-bio h2 {
-    margin-bottom: 10px;
-}
-
-.player-bio iframe {
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 5px;
-}

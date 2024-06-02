@@ -1,0 +1,78 @@
+:root {
+    --primary-color: green;
+    --secondary-color: white;
+    --tertiary-color: black;
+    --eastern-color: blue;
+    --western-color: red;
+}
+
+/* Footer */
+footer {
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer form div {
+    margin-bottom: 15px;
+    width: 50%;
+}
+
+footer form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+footer form input,
+footer form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 20%;
+    margin-top: 10px;
+}
+
+footer form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+.success-message {
+    color: var(--tertiary-color);
+}
+
+.error-message {
+    color: red;
+}
+
+.please-wait {
+    color: orange;
+}
