@@ -1,22 +1,29 @@
 {
   "files": {
-    "main.css": "/celtics/static/css/main.9606273d.css",
-    "main.js": "/celtics/static/js/main.ee4fa0de.js",
+    "main.css": "/celtics/static/css/main.f15a9ae9.css",
+    "main.js": "/celtics/static/js/main.b0f83165.js",
+    "static/media/al_horford.jpg": "/celtics/static/media/al_horford.de4afb20de6d59f496bf.jpg",
     "static/media/logo.png": "/celtics/static/media/logo.e227d56f691c6cece72a.png",
+    "static/media/sam_hauser.jpg": "/celtics/static/media/sam_hauser.ff1355f92972c7f9c120.jpg",
     "static/media/jarrett_allen.jpg": "/celtics/static/media/jarrett_allen.905e8e2981ad8f0afc4a.jpg",
+    "static/media/jaylen_brown.jpg": "/celtics/static/media/jaylen_brown.4dbd386b3ca2f95f95d1.jpg",
+    "static/media/peyton_pritchard.jpg": "/celtics/static/media/peyton_pritchard.2470aba350f8099856d3.jpg",
     "static/media/jaylen_brunson.jpg": "/celtics/static/media/jaylen_brunson.866bc3802aafa53872d4.jpg",
     "static/media/knicks.jpg": "/celtics/static/media/knicks.f1e18c3ac8af008dfbc6.jpg",
     "static/media/mitchell_robinson.jpg": "/celtics/static/media/mitchell_robinson.647260bc5353a9aa2158.jpg",
     "static/media/donovan_mitchell.jpg": "/celtics/static/media/donovan_mitchell.ec828c84bcc7c9fb6eae.jpg",
+    "static/media/jrue_holiday.jpg": "/celtics/static/media/jrue_holiday.de0ea36e9b250840a5a2.jpg",
+    "static/media/derrick_white.jpg": "/celtics/static/media/derrick_white.6f3f1af777559dfa05d3.jpg",
+    "static/media/jayson_tatum.jpg": "/celtics/static/media/jayson_tatum.991be8814b95bcabef56.jpg",
     "static/media/kristaps_porzingis.jpg": "/celtics/static/media/kristaps_porzingis.d3c972003f5dde566c21.jpg",
     "static/media/cavs.jpg": "/celtics/static/media/cavs.c92df3a3de34804f4764.jpg",
     "static/media/caris_levert.jpg": "/celtics/static/media/caris_levert.8a6f0fc0aed32804cea0.jpg",
     "index.html": "/celtics/index.html",
-    "main.9606273d.css.map": "/celtics/static/css/main.9606273d.css.map",
-    "main.ee4fa0de.js.map": "/celtics/static/js/main.ee4fa0de.js.map"
+    "main.f15a9ae9.css.map": "/celtics/static/css/main.f15a9ae9.css.map",
+    "main.b0f83165.js.map": "/celtics/static/js/main.b0f83165.js.map"
   },
   "entrypoints": [
-    "static/css/main.9606273d.css",
-    "static/js/main.ee4fa0de.js"
+    "static/css/main.f15a9ae9.css",
+    "static/js/main.b0f83165.js"
   ]
 }
