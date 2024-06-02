@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/celtics/static/css/main.3d3bbfc0.css",
+    "main.css": "/celtics/static/css/main.bc0902ab.css",
     "main.js": "/celtics/static/js/main.d8797773.js",
     "static/media/bill_russell.jpg": "/celtics/static/media/bill_russell.8ab3041b6cffb8bbe716.jpg",
     "static/media/08_championship.jpg": "/celtics/static/media/08_championship.6e4239733f63775fc7eb.jpg",
@@ -21,11 +21,11 @@
     "static/media/cavs.jpg": "/celtics/static/media/cavs.c92df3a3de34804f4764.jpg",
     "static/media/caris_levert.jpg": "/celtics/static/media/caris_levert.8a6f0fc0aed32804cea0.jpg",
     "index.html": "/celtics/index.html",
-    "main.3d3bbfc0.css.map": "/celtics/static/css/main.3d3bbfc0.css.map",
+    "main.bc0902ab.css.map": "/celtics/static/css/main.bc0902ab.css.map",
     "main.d8797773.js.map": "/celtics/static/js/main.d8797773.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d3bbfc0.css",
+    "static/css/main.bc0902ab.css",
     "static/js/main.d8797773.js"
   ]
 }
