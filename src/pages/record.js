@@ -9,7 +9,7 @@ const Record = () => {
 
   useEffect(() => {
     // Use axios to fetch data
-    axios.get('http://localhost:3001/api/record/')
+    axios.get('https://celtics-server.onrender.com/api/record/')
       .then(response => {
         setTeams(response.data); // Use response.data to get the data
       })
@@ -20,7 +20,7 @@ const Record = () => {
 
   const getImageSrc = (teamName) => {
     //const formattedName = teamName.toLowerCase().replace(/ /g, '_').replace('oklahoma_city_thunder', 'okc');
-    return `http://localhost:3001/${teamName}`;
+    return `https://celtics-server.onrender.com/${teamName}`;
   };
 
   return (
