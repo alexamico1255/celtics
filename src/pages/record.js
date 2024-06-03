@@ -9,7 +9,7 @@ const Record = () => {
 
   useEffect(() => {
     // Use axios to fetch data
-    axios.get('teams.json')
+    axios.get('http://localhost:3001/api/record/')
       .then(response => {
         setTeams(response.data); // Use response.data to get the data
       })
@@ -19,8 +19,8 @@ const Record = () => {
   }, []);
 
   const getImageSrc = (teamName) => {
-    const formattedName = teamName.toLowerCase().replace(/ /g, '_').replace('oklahoma_city_thunder', 'okc');
-    return `/images/team_logo/${formattedName}.jpg`;
+    //const formattedName = teamName.toLowerCase().replace(/ /g, '_').replace('oklahoma_city_thunder', 'okc');
+    return `http://localhost:3001/${teamName}`;
   };
 
   return (
@@ -42,7 +42,7 @@ const Record = () => {
           {teams.easternTeams.map((team, index) => (
             <div className="team" key={index}>
               <h3>{team.name}</h3>
-              <img src={getImageSrc(team.name)} alt={team.name} className="team-logo" />
+              <img src={getImageSrc(team.image)} alt={team.name} className="team-logo" />
               <p>{team.record}</p>
             </div>
           ))}
@@ -53,7 +53,7 @@ const Record = () => {
           {teams.westernTeams.map((team, index) => (
             <div className="team" key={index}>
               <h3>{team.name}</h3>
-              <img src={getImageSrc(team.name)} alt={team.name} className="team-logo" />
+              <img src={getImageSrc(team.image)} alt={team.name} className="team-logo" />
               <p>{team.record}</p>
             </div>
           ))}
