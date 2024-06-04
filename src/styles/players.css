@@ -1,13 +1,14 @@
 /* Table on Players page */
 th,
 td {
-    padding: 20px;
+    width: 100%;
+    padding: 1px;
     text-align: center;
 }
 
 /* Table on Players page */
 .players-page th {
-    padding: 20px;
+    padding: 1px;
     text-align: center;
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -15,7 +16,7 @@ td {
 
 /* Table data on Players page */
 .players-page td {
-    padding: 20px;
+    
     text-align: center;
     border: 1px solid var(--tertiary-color);
 }
