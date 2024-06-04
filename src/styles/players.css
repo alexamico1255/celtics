@@ -33,6 +33,6 @@ td {
     /* Optional: Adjust padding or other styles for better display on smaller screens */
     .players-page th,
     .players-page td {
-      padding: 10px; /* Adjust as needed */
+      padding: 10px;
     }
   }

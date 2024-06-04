@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../styles/players.css';
+import AddPlayer from "../components/add-player";
 import Holiday from '../images/jrue_holiday.jpg';
 import White from '../images/derrick_white.jpg';
 import Brown from '../images/jaylen_brown.jpg';
@@ -88,6 +89,7 @@ const Players = () => {
             ))}
           </tbody>
         </table>
+        <AddPlayer />
       </div>
     </div>
   );
