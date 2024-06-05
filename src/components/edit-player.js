@@ -12,20 +12,21 @@ const EditPlayer = ({ player, onSave }) => {
   const [draftPick, setDraftPick] = useState('');
   const [draftedBy, setDraftedBy] = useState('');
   const [image, setImage] = useState(null);
+  const [prev_img, setPrev_img] = useState(player.img_name);
 
   useEffect(() => {
     if (player) {
-      setName(player.name || '');
-      setPpg(player.ppg || '');
-      setRebounds(player.rebounds || '');
-      setAssists(player.assists || '');
-      setHeight(player.height || '');
-      setWeight(player.weight || '');
-      setAge(player.age || '');
-      setCollege(player.college || '');
-      setDraftPick(player.draft_pick || '');
-      setDraftedBy(player.drafted_by || '');
-      setImage(player.image || '');
+      setName(player.name);
+      setPpg(player.ppg);
+      setRebounds(player.rebounds);
+      setAssists(player.assists);
+      setHeight(player.height);
+      setWeight(player.weight);
+      setAge(player.age);
+      setCollege(player.college);
+      setDraftPick(player.draft_pick);
+      setDraftedBy(player.drafted_by);
+      setImage(player.image);
     }
   }, [player]);
 
@@ -47,7 +48,7 @@ const EditPlayer = ({ player, onSave }) => {
       college,
       draft_pick: draftPick,
       drafted_by: draftedBy,
-      image,
+      prev_img,
     };
     onSave(updatedPlayer);
   };
@@ -102,8 +103,13 @@ const EditPlayer = ({ player, onSave }) => {
           <p id="img-prev-section">
             <img
               id="img-prev"
-              src={image ? URL.createObjectURL(image) : ''}
-              alt=""
+              src={
+                image != null
+                ? URL.createObjectURL(image)
+                : prev_img != null
+                ? `http://localhost:3001/${prev_img}`
+                :""
+              }
             />
           </p>
           <p id="img-upload">

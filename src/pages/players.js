@@ -13,21 +13,11 @@ import Horford from '../images/al_horford.jpg';
 import Pritchard from '../images/peyton_pritchard.jpg';
 import Hauser from '../images/sam_hauser.jpg';
 
-const playerImages = {
-  'Jrue Holiday': Holiday,
-  'Derrick White': White,
-  'Jaylen Brown': Brown,
-  'Jayson Tatum': Tatum,
-  'Kristaps Porzingis': Porzingis,
-  'Al Horford': Horford,
-  'Peyton Pritchard': Pritchard,
-  'Sam Hauser': Hauser,
-};
 
 const Players = () => {
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState(null);
-  const [editPlayer, setEditPlayer] = useState(null); // Add this line
+  const [editPlayer, setEditPlayer] = useState(null);
 
   useEffect(() => {
     axios.get('https://alexamico1255.github.io/csce242/projects/part6/players.json')
@@ -80,10 +70,10 @@ const Players = () => {
                 <td>
                   {player.name === 'Jrue Holiday' ? (
                     <Link to="/holiday">
-                      <img src={playerImages[player.name]} alt={player.name} />
+                      <img src={`http://localhost:3001/${player.img_name}`} alt={player.name} />
                     </Link>
                   ) : (
-                    <img src={playerImages[player.name]} alt={player.name} />
+                    <img src={`http://localhost:3001/${player.img_name}`} alt={player.name} />
                   )}
                 </td>
                 <td>{player.name}</td>
@@ -97,13 +87,13 @@ const Players = () => {
                 <td>{player.draft_pick}</td>
                 <td>{player.drafted_by}</td>
                 <td>
-                  <button onClick={() => handleEditClick(player)}>Edit</button> {/* Add this line */}
+                  <button onClick={() => handleEditClick(player)}>Edit</button> {}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        {editPlayer && <EditPlayer player={editPlayer} onSave={handleSave} />} {/* Add this line */}
+        {editPlayer && <EditPlayer player={editPlayer} onSave={handleSave} />} {}
         <AddPlayer />
       </div>
     </div>
