@@ -29,11 +29,13 @@ const AddPlayer = (props) => {
     });
 
     if (response.status === 200) {
-        setResult("Player Successfully Added"());
+        setResult("Player Added Successfully");
+        
+        props.appendPlayer(await response.json());
         event.target.reset();
     }
     else {
-        console.log("Error adding player", response);
+        console.log("Error Adding Player", response);
         setResult(response.message);
     }
   };

@@ -1,59 +1,51 @@
 import React, { useState, useEffect } from 'react';
 
-const EditPlayer = ({ player, onSave }) => {
-  const [name, setName] = useState('');
-  const [ppg, setPpg] = useState('');
-  const [rebounds, setRebounds] = useState('');
-  const [assists, setAssists] = useState('');
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [age, setAge] = useState('');
-  const [college, setCollege] = useState('');
-  const [draftPick, setDraftPick] = useState('');
-  const [draftedBy, setDraftedBy] = useState('');
+const EditPlayer = async (props) => {
+  const [name, setName] = useState(props.name);
+  const [ppg, setPpg] = useState(props.ppg);
+  const [rebounds, setRebounds] = useState(props.rebounds);
+  const [assists, setAssists] = useState(props.assists);
+  const [height, setHeight] = useState(props.height);
+  const [weight, setWeight] = useState(props.weight);
+  const [age, setAge] = useState(props.age);
+  const [college, setCollege] = useState(props.college);
+  const [draftPick, setDraftPick] = useState(props.draft_pick);
+  const [draftedBy, setDraftedBy] = useState(props.drafted_by);
   const [image, setImage] = useState(null);
-  const [prev_img, setPrev_img] = useState(player.img_name);
+  const [prev_img, setPrev_img] = useState(props.img_name);
 
-  useEffect(() => {
-    if (player) {
-      setName(player.name);
-      setPpg(player.ppg);
-      setRebounds(player.rebounds);
-      setAssists(player.assists);
-      setHeight(player.height);
-      setWeight(player.weight);
-      setAge(player.age);
-      setCollege(player.college);
-      setDraftPick(player.draft_pick);
-      setDraftedBy(player.drafted_by);
-      setImage(player.image);
-    }
-  }, [player]);
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedPlayer = {
-      ...player,
-      name,
-      ppg,
-      rebounds,
-      assists,
-      height,
-      weight,
-      age,
-      college,
-      draft_pick: draftPick,
-      drafted_by: draftedBy,
-      prev_img,
-    };
-    onSave(updatedPlayer);
+    //setResult("Updating...");
+    const formData = new FormData(e.target);
+
+    console.log("Id is " + props._id);
+    
+    const response = await fetch(
+      `http://localhost:3001/api/players/${props._id}`,
+      {
+        method: "PUT",
+        body: FormData,
+      }
+    );
+
+    if (response.status === 200) {
+      //setResult("Player Updated Successfully");
+      e.target.removeEventListener(); //reset form fields
+      //props.EditPlayer(await response.json());
+      //props.closeDialog();
+    } else {
+      console.log("Error Editing Player", response);
+      //setResult(response.message);
+    }
   };
 
-  if (!player) return null;
+ // if (!player) return null;
 
   return (
     <div className="edit-player">

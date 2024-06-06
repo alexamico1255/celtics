@@ -20,7 +20,7 @@ const Players = () => {
   const [editPlayer, setEditPlayer] = useState(null);
 
   useEffect(() => {
-    axios.get('https://alexamico1255.github.io/csce242/projects/part6/players.json')
+    axios.get('http://localhost:3001/api/players')
       .then(response => {
         setPlayers(response.data);
       })
@@ -38,6 +38,10 @@ const Players = () => {
     setPlayers(players.map(player => player._id === updatedPlayer._id ? updatedPlayer : player));
     setEditPlayer(null); // Close the edit form
   };
+
+  const appendPlayer = (player) => {
+    setPlayers((players) => [...players, player]);
+  }
 
   if (error) {
     return <div>Error fetching player data: {error.message}</div>;
@@ -67,15 +71,7 @@ const Players = () => {
           <tbody id="players-list">
             {players.map(player => (
               <tr key={player._id}>
-                <td>
-                  {player.name === 'Jrue Holiday' ? (
-                    <Link to="/holiday">
-                      <img src={`http://localhost:3001/${player.img_name}`} alt={player.name} />
-                    </Link>
-                  ) : (
-                    <img src={`http://localhost:3001/${player.img_name}`} alt={player.name} />
-                  )}
-                </td>
+                <td><img src={`http://localhost:3001/${player.img_name}`} alt={player.name} /></td>
                 <td>{player.name}</td>
                 <td>{player.ppg}</td>
                 <td>{player.rebounds}</td>
@@ -93,8 +89,8 @@ const Players = () => {
             ))}
           </tbody>
         </table>
-        {editPlayer && <EditPlayer player={editPlayer} onSave={handleSave} />} {}
-        <AddPlayer />
+        {editPlayer  && <EditPlayer id={editPlayer._id} name={editPlayer.name} onSave={handleSave} />} {}
+        <AddPlayer  appendPlayer = {appendPlayer} />
       </div>
     </div>
   );
