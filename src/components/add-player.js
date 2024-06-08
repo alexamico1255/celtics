@@ -118,6 +118,7 @@ const AddPlayer = (props) => {
                 required
               />
             </p>
+            
 
             <section className="columns">
               <p id="img-prev-section">
