@@ -4,14 +4,7 @@ import { Link } from 'react-router-dom';
 import '../styles/players.css';
 import AddPlayer from "../components/add-player";
 import EditPlayer from "../components/edit-player";
-import Holiday from '../images/jrue_holiday.jpg';
-import White from '../images/derrick_white.jpg';
-import Brown from '../images/jaylen_brown.jpg';
-import Tatum from '../images/jayson_tatum.jpg';
-import Porzingis from '../images/kristaps_porzingis.jpg';
-import Horford from '../images/al_horford.jpg';
-import Pritchard from '../images/peyton_pritchard.jpg';
-import Hauser from '../images/sam_hauser.jpg';
+
 
 
 const Players = () => {
