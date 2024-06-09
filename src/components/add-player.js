@@ -53,7 +53,7 @@ const AddPlayer = (props) => {
           </span>
           <form id="add-player-form" onSubmit={onSubmit}>
             <p>
-              <label htmlFor="name">Player Name:</label>
+              <label htmlFor="name">Player Name: </label>
               <input
                 type="text"
                 id="name"
@@ -64,7 +64,7 @@ const AddPlayer = (props) => {
               />
             </p>
             <p>
-              <label htmlFor="ppg">PPG</label>
+              <label htmlFor="ppg">PPG: </label>
               <input
                 type="number"
                 id="ppg"
@@ -75,7 +75,7 @@ const AddPlayer = (props) => {
               />
             </p>
             <p>
-              <label htmlFor="rebounds">Rebounds</label>
+              <label htmlFor="rebounds">Rebounds: </label>
               <input
                 type="number"
                 id="rebounds"
@@ -86,7 +86,7 @@ const AddPlayer = (props) => {
               />
             </p>
             <p>
-              <label htmlFor="assists">Assists</label>
+              <label htmlFor="assists">Assists: </label>
               <input
                 type="number"
                 id="assists"
@@ -97,7 +97,7 @@ const AddPlayer = (props) => {
               />
             </p>
             <p>
-              <label htmlFor="height">Height</label>
+              <label htmlFor="height">Height: </label>
               <input
                 type="number"
                 id="height"
@@ -108,7 +108,7 @@ const AddPlayer = (props) => {
               />
             </p>
             <p>
-              <label htmlFor="weight">Weight</label>
+              <label htmlFor="weight">Weight: </label>
               <input
                 type="number"
                 id="weight"
@@ -119,7 +119,6 @@ const AddPlayer = (props) => {
               />
             </p>
             
-
             <section className="columns">
               <p id="img-prev-section">
                 <img
@@ -131,7 +130,7 @@ const AddPlayer = (props) => {
                 />
               </p>
               <p id="img-upload">
-                <label htmlFor="img">Upload Image:</label>
+                <label htmlFor="img">Upload Image: </label>
                 <input
                   type="file"
                   id="img"

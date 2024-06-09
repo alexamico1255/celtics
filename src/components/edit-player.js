@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const EditPlayer = async (props) => {
+const EditPlayer = (props) => {
   const [name, setName] = useState(props.name);
   const [ppg, setPpg] = useState(props.ppg);
   const [rebounds, setRebounds] = useState(props.rebounds);
@@ -14,38 +14,46 @@ const EditPlayer = async (props) => {
   const [image, setImage] = useState(null);
   const [prev_img, setPrev_img] = useState(props.img_name);
 
-
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //setResult("Updating...");
-    const formData = new FormData(e.target);
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('ppg', ppg);
+    formData.append('rebounds', rebounds);
+    formData.append('assists', assists);
+    formData.append('height', height);
+    formData.append('weight', weight);
+    formData.append('age', age);
+    formData.append('college', college);
+    formData.append('draft_pick', draftPick);
+    formData.append('drafted_by', draftedBy);
+    if (image) {
+      formData.append('img', image);
+    }
 
-    console.log("Id is " + props._id);
-    
-    const response = await fetch(
-      `http://localhost:3001/api/players/${props._id}`,
-      {
-        method: "PUT",
-        body: FormData,
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/players/${props.id}`,
+        {
+          method: 'PUT',
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        const updatedPlayer = await response.json();
+        props.onSave(updatedPlayer);
+      } else {
+        console.log('Error Editing Player', response);
       }
-    );
-
-    if (response.status === 200) {
-      //setResult("Player Updated Successfully");
-      e.target.removeEventListener(); //reset form fields
-      //props.EditPlayer(await response.json());
-      //props.closeDialog();
-    } else {
-      console.log("Error Editing Player", response);
-      //setResult(response.message);
+    } catch (error) {
+      console.error('Error Editing Player', error);
     }
   };
-
- // if (!player) return null;
 
   return (
     <div className="edit-player">
@@ -97,10 +105,10 @@ const EditPlayer = async (props) => {
               id="img-prev"
               src={
                 image != null
-                ? URL.createObjectURL(image)
-                : prev_img != null
-                ? `http://localhost:3001/${prev_img}`
-                :""
+                  ? URL.createObjectURL(image)
+                  : prev_img != null
+                  ? `http://localhost:3001/${prev_img}`
+                  : ''
               }
             />
           </p>

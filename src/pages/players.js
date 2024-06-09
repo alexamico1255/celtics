@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import '../styles/players.css';
 import AddPlayer from "../components/add-player";
 import EditPlayer from "../components/edit-player";
-
-
+import '../styles/players.css';
 
 const Players = () => {
   const [players, setPlayers] = useState([]);
@@ -24,17 +21,17 @@ const Players = () => {
   }, []);
 
   const handleEditClick = (player) => {
-    setEditPlayer(player); // Set the player to be edited
+    setEditPlayer(player);
   };
 
   const handleSave = (updatedPlayer) => {
     setPlayers(players.map(player => player._id === updatedPlayer._id ? updatedPlayer : player));
-    setEditPlayer(null); // Close the edit form
+    setEditPlayer(null);
   };
 
   const appendPlayer = (player) => {
-    setPlayers((players) => [...players, player]);
-  }
+    setPlayers([...players, player]);
+  };
 
   if (error) {
     return <div>Error fetching player data: {error.message}</div>;
@@ -76,14 +73,14 @@ const Players = () => {
                 <td>{player.draft_pick}</td>
                 <td>{player.drafted_by}</td>
                 <td>
-                  <button onClick={() => handleEditClick(player)}>Edit</button> {}
+                  <button onClick={() => handleEditClick(player)}>Edit</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-        {editPlayer  && <EditPlayer id={editPlayer._id} name={editPlayer.name} onSave={handleSave} />} {}
-        <AddPlayer  appendPlayer = {appendPlayer} />
+        {editPlayer && <EditPlayer id={editPlayer._id} {...editPlayer} onSave={handleSave} />}
+        <AddPlayer appendPlayer={appendPlayer} />
       </div>
     </div>
   );
