@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddPlayer from "../components/add-player";
 import EditPlayer from "../components/edit-player";
+import DeletePlayer from "../components/delete-player";
 import '../styles/players.css';
 
 const Players = () => {
   const [players, setPlayers] = useState([]);
   const [error, setError] = useState(null);
   const [editPlayer, setEditPlayer] = useState(null);
+  const [deletePlayer, setDeletePlayer] = useState(null);
+
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/players')
@@ -33,6 +36,10 @@ const Players = () => {
     setPlayers([...players, player]);
   };
 
+  const handleDeleteClick = (player) => {
+    setDeletePlayer(player);
+  };
+
   if (error) {
     return <div>Error fetching player data: {error.message}</div>;
   }
@@ -56,6 +63,7 @@ const Players = () => {
               <th>Draft Pick</th>
               <th>Drafted By</th>
               <th>Edit</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody id="players-list">
@@ -75,12 +83,16 @@ const Players = () => {
                 <td>
                   <button onClick={() => handleEditClick(player)}>Edit</button>
                 </td>
+                <td>
+                  <button onClick={() => handleDeleteClick(player)}>Delete</button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
         {editPlayer && <EditPlayer id={editPlayer._id} {...editPlayer} onSave={handleSave} />}
         <AddPlayer appendPlayer={appendPlayer} />
+        <DeletePlayer deletePlayer={deletePlayer} />
       </div>
     </div>
   );

@@ -94,6 +94,15 @@ td {
   cursor: pointer;
 }
 
+/*Delete Player*/
+.delete-player button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+
 
 /* Media query for screens 600px or less */
 @media (max-width: 600px) {
