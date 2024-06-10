@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddPlayer from "../components/add-player";
 import EditPlayer from "../components/edit-player";
-import DeletePlayer from "../components/delete-player";
+import DeleteDialog from "../components/delete-player"; // Importing DeleteDialog
 import '../styles/players.css';
 
 const Players = () => {
@@ -10,7 +10,6 @@ const Players = () => {
   const [error, setError] = useState(null);
   const [editPlayer, setEditPlayer] = useState(null);
   const [deletePlayer, setDeletePlayer] = useState(null);
-
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/players')
@@ -38,6 +37,14 @@ const Players = () => {
 
   const handleDeleteClick = (player) => {
     setDeletePlayer(player);
+  };
+
+  const closeDeleteDialog = () => {
+    setDeletePlayer(null);
+  };
+
+  const hidePlayer = () => {
+    setPlayers(players.filter(player => player._id !== deletePlayer._id));
   };
 
   if (error) {
@@ -92,7 +99,14 @@ const Players = () => {
         </table>
         {editPlayer && <EditPlayer id={editPlayer._id} {...editPlayer} onSave={handleSave} />}
         <AddPlayer appendPlayer={appendPlayer} />
-        <DeletePlayer deletePlayer={deletePlayer} />
+        {deletePlayer && (
+          <DeleteDialog
+            _id={deletePlayer._id}
+            name={deletePlayer.name}
+            hidePlayer={hidePlayer}
+            closeDialog={closeDeleteDialog}
+          />
+        )}
       </div>
     </div>
   );
