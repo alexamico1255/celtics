@@ -10,6 +10,7 @@ const Players = () => {
   const [error, setError] = useState(null);
   const [editPlayer, setEditPlayer] = useState(null);
   const [deletePlayer, setDeletePlayer] = useState(null);
+  const [showAddPlayer, setShowAddPlayer] = useState(false); // State for Add Player form
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/players')
@@ -55,6 +56,7 @@ const Players = () => {
     <div className="players-page">
       <div className="players-container">
         <h2>2023-2024 Roster:</h2>
+        <button onClick={() => setShowAddPlayer(true)}>Add Player</button> {/* Add Player button */}
         <table>
           <thead>
             <tr>
@@ -98,7 +100,7 @@ const Players = () => {
           </tbody>
         </table>
         {editPlayer && <EditPlayer id={editPlayer._id} {...editPlayer} onSave={handleSave} />}
-        <AddPlayer appendPlayer={appendPlayer} />
+        {showAddPlayer && <AddPlayer appendPlayer={appendPlayer} closeDialog={() => setShowAddPlayer(false)} />} {/* Conditional rendering of AddPlayer */}
         {deletePlayer && (
           <DeleteDialog
             _id={deletePlayer._id}
