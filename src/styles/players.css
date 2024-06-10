@@ -16,9 +16,18 @@ td {
 
 /* Table data on Players page */
 .players-page td {
-    
     text-align: center;
     border: 1px solid var(--tertiary-color);
+}
+
+/* Add Player button styling */
+.add-player-button {
+    margin: 20px 0; /* Adds margin to the top and bottom of the button */
+    padding: 10px 20px; /* Adds padding inside the button */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
 }
 
 /*Edit Player (Modal)*/
@@ -103,7 +112,6 @@ td {
   cursor: pointer;
 }
 
-
 /* Media query for screens 600px or less */
 @media (max-width: 600px) {
     /* Table on Players page */
@@ -117,4 +125,4 @@ td {
     .players-page td {
       padding: 10px;
     }
-  }
+}

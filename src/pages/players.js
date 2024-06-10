@@ -56,7 +56,6 @@ const Players = () => {
     <div className="players-page">
       <div className="players-container">
         <h2>2023-2024 Roster:</h2>
-        <button onClick={() => setShowAddPlayer(true)}>Add Player</button> {/* Add Player button */}
         <table>
           <thead>
             <tr>
@@ -99,8 +98,9 @@ const Players = () => {
             ))}
           </tbody>
         </table>
+        <button className="add-player-button" onClick={() => setShowAddPlayer(true)}>Add Player</button>
         {editPlayer && <EditPlayer id={editPlayer._id} {...editPlayer} onSave={handleSave} />}
-        {showAddPlayer && <AddPlayer appendPlayer={appendPlayer} closeDialog={() => setShowAddPlayer(false)} />} {/* Conditional rendering of AddPlayer */}
+        {showAddPlayer && <AddPlayer appendPlayer={appendPlayer} closeDialog={() => setShowAddPlayer(false)} />}
         {deletePlayer && (
           <DeleteDialog
             _id={deletePlayer._id}
